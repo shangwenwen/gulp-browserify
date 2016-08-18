@@ -1,0 +1,20 @@
+{
+  "name": "bower_demo",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "shangwen <1967553097@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iCheck": "icheck#^1.0.2"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery.icheck": "./bower_components/iCheck/icheck.min.js",
+    "jquery.bootstrap": "./bower_components/bootstrap/dist/js/bootstrap.min.js"
+  },
+  "browserify-shim": {
+    "jquery.icheck": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "jquery.bootstrap": {
+      "depends": [
+        "jquery:jQuery",
+        "tether:Tether"
+      ]
+    }
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "browserify-shim": "^3.8.12",
+    "concat": "0.0.1-security",
+    "concat-stream": "^1.5.1",
+    "factor-bundle": "^2.5.0",
+    "gulp": "^3.9.1",
+    "gulp-md5": "^0.1.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "jquery": "^3.1.0",
+    "tether": "^1.3.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

@@ -34,6 +34,7 @@ gulp.task('BROWSERIFY', ['COPY:JS'], function() {
 /**
  * [getEntry 获取多页面的每个入口文件，用于配置中的entry]
  * @return {[type]} [description]
+ * 
  */
 function getEntry() {
     var fileDir = path.resolve(process.cwd(), './src');

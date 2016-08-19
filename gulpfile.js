@@ -10,15 +10,16 @@ var sourcemaps = require("gulp-sourcemaps");
 var buffer = require('vinyl-buffer');
 
 var uglify = require('gulp-uglify');
-var md5 = require("gulp-md5");
 
 gulp.task('BROWSERIFY', ['COPY:JS'], function() {
     return browserify({
             entries: getEntry(),
+            plugin: [
+                [factor, {
+                    outputs: getOut()
+                }]
+            ],
             debug: true
-        })
-        .plugin(factor, {
-            o: getOut()
         })
         .bundle()
         .pipe(source("common.js"))
@@ -76,8 +77,6 @@ gulp.task('BUILD:JS', ['BROWSERIFY'], function() {
     var timeStamp = Date.parse(new Date());
     console.log(timeStamp);
     return gulp.src('./bundle/*.js')
-        .pipe(uglify())
-        .pipe(md5())
         .pipe(gulp.dest('./bundle/'));
 });
 
